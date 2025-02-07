@@ -7,7 +7,6 @@ import { useState,useEffect } from "react";
 import Spinner from "./components/Spinner";
 import {toast} from "react-toastify";
 
-
 const App = () => { 
   const [courses, setCourses] = useState(null);
   const [loading, setLoading] = useState(true);

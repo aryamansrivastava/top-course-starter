@@ -8,18 +8,18 @@ const Card = (props) => {
   let setLikedCourses = props.setLikedCourses;
 
   function clickHandler() {
-    //logic
+    // logic
     if (likedCourses.includes(course.id)) {
-      //pehle se like hua pada tha
+      // Course is already liked; remove it
       setLikedCourses((prev) => prev.filter((cid) => cid !== course.id));
       toast.warning("like removed");
     } else {
-      //pehle se like nahi hai ye course
-      //insert karna h ye course liked courses me
+      // pehle se like nahi hai ye course
+      // insert karna h ye course liked courses me
       if (likedCourses.length === 0) {
         setLikedCourses([course.id]);
       } else {
-        //non-empty pehle se
+        // Add the new course ID to the existing array
         setLikedCourses((prev) => [...prev, course.id]);
       }
       toast.success("Liked Successfully");
@@ -28,7 +28,7 @@ const Card = (props) => {
   return (
     <div className="w-[300px] bg-bgDark bg-opacity-80 rounded-md overflow-hidden">
       <div className="relative">
-        <img src={course.image.url} />
+        <img src={course.image.url} alt=""/>
 
         <div
           className="w-[40px] h-[40px] bg-white rounded-full absolute right-2 bottom-[-12px]
